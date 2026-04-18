@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streams</title>
+
+    <style>
+        body {
+            margin: 0;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Title flicker */
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .page-title {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+            font-size: 4rem;
+            color: #8b0000;
+            animation: flicker 2s infinite;
+            letter-spacing: 5px;
+        }
+
+        /* Fog layers */
+        .fog {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('https://i.imgur.com/M6rwarW.png') repeat-x;
+        opacity: 0.08; /* even more subtle */
+        pointer-events: none;
+        z-index: 1;
+        }
+
+        .fog1 {
+            animation: fogMove 60s linear infinite;
+        }
+        .fog2 {
+            animation: fogMoveReverse 90s linear infinite;
+            opacity: 0.05;
+        }
+
+        @keyframes fogMove {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @keyframes fogMoveReverse {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+
+
+            /* Creepy message */
+            .message {
+                width: 100%;
+                text-align: center;
+                font-size: 1.5rem;
+                opacity: 0.6;
+                animation: fadeInOut 6s infinite;
+            }
+
+            .messages {
+                width: 100%;
+                text-align: center;
+                z-index: 3;
+                position: relative;
+            }
+
+            @keyframes fadeInOut {
+                0%, 100% {
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 0.6;
+                }
+            }
+
+            /* Subtle screen pulse */
+            @keyframes pulse {
+                0% {
+                    background-color: #000;
+                }
+
+                50% {
+                    background-color: #050505;
+                }
+
+                100% {
+                    background-color: #000;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title">SACRIFICES</h1>
+
+    <div class="fog fog1"></div>
+    <div class="fog fog2"></div>
+
+    <div class="messages" style="padding-top:200px;">
+        <div class="message">
+            <h1><a href="https://www.twitch.tv/makurodemonfire">TWITCH</a></h1>
+            <p>Watch the horrors unfold live!</p>
+        </div>
+
+        <div class="message">
+            <h1><a href="https://www.youtube.com/@MakuroDemonFire">YOUTUBE</a></h1>
+            <p>View the horrors long since past</p>
+        </div>
+
+        <div class="message"><a href="index.html">HOME</a></div>
+    </div>
+</body>
+</html>

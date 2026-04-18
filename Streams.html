@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streams</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Title flicker */
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        h1 {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            text-align: center;
+            font-size: 4rem;
+            color: #8b0000;
+            animation: flicker 2s infinite;
+            letter-spacing: 5px;
+        }
+
+        /* Fog layers */
+        .fog {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('https://i.imgur.com/M6rwarW.png') repeat-x;
+            opacity: 0.15;
+        }
+
+        .fog1 {
+            animation: fogMove 60s linear infinite;
+        }
+
+        .fog2 {
+            animation: fogMoveReverse 90s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes fogMove {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes fogMoveReverse {
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Creepy message */
+        .message {
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            opacity: 0.6;
+            animation: fadeInOut 6s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Subtle screen pulse */
+        @keyframes pulse {
+            0% {
+                background-color: #000;
+            }
+
+            50% {
+                background-color: #050505;
+            }
+
+            100% {
+                background-color: #000;
+            }
+        }
+
+        body {
+            animation: pulse 10s infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>MY STREAMS</h1>
+
+    <div class="fog fog1"></div>
+    <div class="fog fog2"></div>
+
+    <div class="message">
+        <p>Coming Soon!</p>
+        <p>Stay Tuned..</p>
+        <a href="/index.html">Back to Home</a>
+    </div>
+
+
+</body>
+</html>

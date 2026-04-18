@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makuro's Lair'</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Flicker Animation */
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+
+            5% {
+                opacity: 0.4;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0.2;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            color: #8b0000;
+            animation: flicker 3s infinite;
+        }
+
+        .subtitle {
+            letter-spacing: 4px;
+            opacity: 0.7;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,0,0,0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+            .card:hover {
+                transform: scale(1.03);
+                box-shadow: 0 0 20px rgba(139,0,0,0.5);
+            }
+
+        .glitch {
+            display: inline-block;
+            position: relative;
+            animation: glitch 0.3s infinite;
+        }
+
+        /* Creepy floating text */
+        .floating {
+            position: fixed;
+            top: 20%;
+            left: 10%;
+            font-size: 1.5rem;
+            color: rgba(255,0,0,0.2);
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+
+            to {
+                transform: translateY(50px);
+            }
+        }
+
+        /* Fog effect */
+        .fog {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            opacity: 0.05;
+            animation: moveFog 60s linear infinite;
+        }
+
+        @keyframes moveFog {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+        section, .card {
+            position: relative;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="fog"></div>
+
+    <header>
+        <h1 class="glitch">WELCOME TO MY DOMAIN</h1>
+        <img src="modelposedbackground1.png"/>
+        <p class="subtitle">I see you</p>
+        <p class="glitch" style="color: darkred; font-size: xx-large;">Makuro Demonfire</p>
+    </header>
+
+    <div class="floating">Do you feel the fear?</div>
+
+    <section>
+        <div class="card">
+            <h2>Streams</h2>
+            <a href="Streams.html">Watch My Horrors</a>
+        </div>
+        <div class="card">
+            <h2>Sacrifices</h2>
+            <a href="Sacrifices.html">Offer Your Souls</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 // It never leaves</p>
+    </footer>
+
+</body>
+</html>
